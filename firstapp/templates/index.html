@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block userName %}
+    {{ user }}
+{% endblock %}
+
+{% block logoutButton %}
+<a href="{% url 'logout' %}" class="btn btn-primary my-2 my-sm-0">LOGOUT</a>
+{% endblock %}
+
+
+{% block title %}
+    index
+{% endblock %}
+
+{% block error %}
+        {% if error %}
+            >
+            <div class="alert alert-danger alert-dismissible fade show">
+                    <strong>Error!</strong> 
+                    {% if error == 1 %}    
+                    mark of this student not exist, enter marks !  
+                    {% endif %}
+                    {% if error == 2 %}
+                    student removed successfully
+                    {% endif %}
+                    {% if error == 3 %}
+                    student with this roll number exist 
+                    {% endif %}
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+            </div>
+        {% endif %}
+{% endblock %}
+
+{% block body %}
+>
+        <div class="jumbotron jumbotron">
+            <div class="container">
+                <p>Add Student</p>
+                <form action="{% url 'submit' %}" method="POST" class="form-group" id="markform">{% csrf_token %}        
+                        <div class="form-inline row">
+                        <input type="text" name="name" id="" form="markform" class="form-control col-5"  placeholder="First name only" aria-describedby="helpId" required>
+                        <input type="number" name="rollno" id="" form="markform" class="form-control col-5" placeholder="Valid roll number" aria-describedby="helpId" required>            
+                        <button type="submit" class="btn btn-primary col-2"><i class="fa fa-plus" aria-hidden="true">&nbsp Add</i></button>
+                    </div>
+                </form> 
+            </div>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-dark"  style="width:100%">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>ROLLNO</th>
+                        <th>OPERATIONS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for student in students %}
+                    <tr>
+                            <td scope="row">{{ student.id }}</td>
+                            <td >{{ student.fName }}</td>
+                            <td>{{ student.rollNo }}</td>
+                            <td>
+                                <a href="{% url 'add' student.id  %}" class="btn btn-primary" href="#" role="button"> <i class="fas fa-plus" aria-hidden="true"></i> add marks </a>  &nbsp
+                                <a href="{% url 'detail' student.id %}" class="btn btn-primary" href="#" role="button"><i class="fa fa-clone" aria-hidden="true"></i> view mark  </a> &nbsp
+                                <a href="{% url 'delete' student.id %}" class="btn btn-primary" href="#" role="button"><i class="fas fa-trash" aria-hidden="true"></i> delete </a> 
+                            </td>                            
+
+                    </tr>
+                    {% endfor %}                    
+                </tbody>
+            </table>   
+        </div>               
+{% endblock %}

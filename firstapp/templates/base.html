@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>{% block title %}{% endblock %}</title>
+    {% block style %}
+    <style>
+        .nav > .active{
+            color: white !important;
+        }
+        a:link {
+            text-decoration: none !important;
+        }
+    </style>
+    {% endblock %}
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-dark" style="background-color: #e3f2fd;">
+        <a class="navbar-brand active" style="color:white !important" href="#" >Faculty Dashboard<span class="sr-only">(current)</span></a>
+        
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" style="color: red" href="#">{% block userName %}{% endblock %}<span class="sr-only">(current)</span></a>
+                </li>            
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                {% block homeButton %}
+                {% endblock %}
+                &nbsp &nbsp &nbsp &nbsp
+                {% block logoutButton %}
+                {% endblock %}
+            </form>
+        </div>
+    </nav>
+    
+    
+    <div class="container ">    
+    {% block error %}
+    {% endblock %}
+    
+    {% block body %}
+    {% endblock %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block userName %}
+    {{ user }}
+{% endblock %}
+
+{% block logoutButton %}
+<a href="{% url 'logout' %}" class="btn btn-primary my-2 my-sm-0">LOGOUT</a>
+{% endblock %}
+
+{% block title %}
+    Detail
+{% endblock %}
+
+{% block homeButton %}
+<a href="{% url 'index' %}" class="btn btn-primary my-2 my-sm-0">HOME PAGE</a>
+{% endblock %}
+
+{% block body %}
+<div class="container ">
+    <div>></div>    
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered table-dark"  style="width:100%">
+                <thead class="thead-inverse">
+                    <tr>
+                        <th>#</th>
+                        <th>1 sem</th>
+                        <th>2 sem</th>
+                        <th>3 sem</th>
+                        <th>operation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                            <form action="{% url 'submitmark' %}" method="POST" class="form-group" id="submitmark">{% csrf_token %}        
+                                <td><input type="number" name="id"  form="submitmark" value="{{ id }}" class="form-control col-5"  aria-describedby="helpId" disabled></td>
+                                <td><input type="number" name="s1"  form="submitmark" class="form-control col-5"   aria-describedby="helpId" required></td>
+                                <td><input type="number" name="s2"  form="submitmark" class="form-control col-5"   aria-describedby="helpId" required></td>
+                                <td><input type="number" name="s3"  form="submitmark" class="form-control col-5"   aria-describedby="helpId" required></td>
+                                <td><button type="submit" class="btn btn-primary "><i class="fa fa-plus" aria-hidden="true">&nbsp Add</i></button></td>
+                            </form>
+                    </tr>                   
+                </tbody>
+            </table>   
+        </div>                              
+    </div>
+{% endblock %}
