@@ -34,8 +34,8 @@ python3 manage.py startapp appName '''
 
     1.  create model  // modelName = tableName
             class <modelName>(models.Model):
-                attributesName = modelName.dataType(constraints)  
-                // E.g dataType = IntegerField(), CharField(max_length=64)
+                attributesName = models.dataType(constraints1,constraints2)  
+                // E.g dataType = IntegerField(unique=True), CharField(max_length=64)
     2.  make migrations
             $ python3 manage.py makemigrations // look change in models.py
             $ python3 manage.py migrate        // make table corressponding to models
