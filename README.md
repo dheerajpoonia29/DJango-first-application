@@ -3,15 +3,15 @@
 ## PROJECT SCREENSHOT
 |   login page            |  sign-up page |
 :-------------------------:|:-------------------------:
-![page]()    |   ![page]()
+![page](https://github.com/dheerajpoonia29/studentsMarksManagement-projectPythonDjango/blob/master/projectImage/login-page.png?raw=true)    |   ![page](https://github.com/dheerajpoonia29/studentsMarksManagement-projectPythonDjango/blob/master/projectImage/sign-up.png?raw=true)
 
 |   faculty dashboard page            |  faculty add student  page |
 :-------------------------:|:-------------------------:
-![page]()    |   ![page]()
+![page](https://github.com/dheerajpoonia29/studentsMarksManagement-projectPythonDjango/blob/master/projectImage/faculty-db.png?raw=true)    |   ![page](https://github.com/dheerajpoonia29/studentsMarksManagement-projectPythonDjango/blob/master/projectImage/faculty-db-add-student.png?raw=true)
 
 |   faculty add marks page            |  faculty view marks  page |
 :-------------------------:|:-------------------------:
-![page]()    |   ![page]()
+![page](https://github.com/dheerajpoonia29/studentsMarksManagement-projectPythonDjango/blob/master/projectImage/faculty-add-marks.png?raw=true)    |   ![page](https://github.com/dheerajpoonia29/studentsMarksManagement-projectPythonDjango/blob/master/projectImage/faculty-view-marks.png?raw=true)
 
 
 ## DJANGO 
