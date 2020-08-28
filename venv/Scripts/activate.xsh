@@ -28,7 +28,7 @@ def _deactivate(args):
 _deactivate(["nondestructive"])
 aliases["deactivate"] = _deactivate
 
-$VIRTUAL_ENV = r"C:\Users\fsociety\Desktop\django-student-marks-management-python-webapp\venv"
+$VIRTUAL_ENV = r"D:\githubRepos\studentsMarksManagement-projectPythonDjango\venv"
 
 $_OLD_VIRTUAL_PATH = $PATH
 $PATH = $PATH[:]
